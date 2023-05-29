@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="stylesheet" type="text/css" href="Resources\External.css" />
+		
+    </head>
+    <body>
+		<header id="header">
+			<div class="container">
+				<div class="head">
+					<table>
+						<tr>
+							<th style="text-align:left"><img src="Resources/img/logo.jpg" alt="Logo" class="img"></th>
+							<th style="text-align:right">
+								<ul>
+									  <li><a class="active" href="index.html">Home</a></li>
+									  <li><a href="Menu.html">Menu</a></li>
+									  <li><a href="AboutUs.html">About DubuBap</a></li>
+									  <li><a href="OrderForm.html">Order Now</a></li>
+                                </ul>
+							</th>
+						</tr>
+					</table>
+				</div>
+            </div>
+		</header>
+        <section>
+			<div class="about">
+				<h2>About Us</h2>
+				<p>
+					Introducing a new taste by making a Korean inspired delicacy with a Filipino twist and <br />
+					To add craze to Filipinos’ Korean craze by bringing people the taste of Korea
+					with a little bit of our culture.
+				</p>
+			</div>	
+		</section>
+		<section>
+			<div class="abtholder">
+				<div class="abt1">
+					<h2>
+						The Best Bite in
+						the Neighborhood
+					</h2>
+					<p>
+						Dubudap is a new Korean delicacy . Our product is Kimbap rolls with a good quality and service. Our menu will
+						include a variety of Korean delicacy with a twist of Filipino dishes that are freshly made
+						using sticky rice together with seaweeds outside and inside this Kimbap roll are Filipino
+						dishes made of tofu with the flavours of sisig, adobo and bicol express and cucumber
+						and carrots inside.
+					</p>
+				</div>
+				<div class="abt2">
+					<img src="Resources/img/abt.jpg" alt="about" class="img1">
+				</div>
+				<div class="abt3">
+					<h2>Real and Healthy Foods. <br /> A pure Goodness in every bite.</h2>
+				</div>
+				<div class="abt4">
+					<img src="Resources/img/abt2.jpg" alt="about2" class="img2">
+				</div>
+				<div class="abt5">
+					<h2>
+						This Is How We Prepare 
+					</h2>
+					<p>
+						Kimbap Roll had good quality of product and service. We present delicious and
+						great recipes. Also, our product is a Korean delicacy with a twist of Filipino dishes. It is
+						rare and unique food. It is made of sticky rice with seaweed's outside and inside is a
+						Filipino dish made of tofu with Sisig flavor and cucumber and carrot inside.
+					</p>
+					<button id="playButton" class="btn">Click To See How We Prepare Your Goodies</button>
+					<div id="videoModal" class="modal">
+						  <div class="modal-content">
+								<span class="close">&times;</span>
+								<iframe id="videoFrame" src="Resources/vid/Prep.mp4" frameborder="1" allowfullscreen></iframe>
+						  </div>
+					</div>
+					<script>
+						var playButton = document.getElementById("playButton");
+						var videoModal = document.getElementById("videoModal");
+						var closeButton = document.getElementsByClassName("close")[0];
+						var videoFrame = document.getElementById("videoFrame");
+
+						playButton.addEventListener("click", function() 
+						{
+						  videoModal.style.display = "block";
+						  videoFrame.src = "Resources/vid/Prep.mp4";
+						});
+
+						closeButton.addEventListener("click", function() 
+						{
+						  videoModal.style.display = "none";
+						  videoFrame.src = "";
+						});
+
+						window.addEventListener("click", function(event) 
+						{
+						  if (event.target === videoModal) 
+						  {
+							videoModal.style.display = "none";
+							videoFrame.src = "";
+						  }
+						});
+					</script>
+				</div>
+			</div>
+		</section>
+		<section class="reach">
+			<div class="letter">
+				<form id="myForm" action="" method="post">
+					<h2>Newsletter</h2>
+					<p>Stay up to date with all the latest from the DubuBap</p>
+					<table style="text-align:center">
+							<tr>
+								<th>Email</th>
+							</tr>
+							<tr>
+								<th><input type="text" name= "email" placeholder="Enter Email"></th>
+								<th><input type="submit" name= "submit" value="Join"></th>
+							</tr>
+					</table>
+				</form>
+			</div>
+			<div class="contact">
+				<h2>Talk to Us</h2>
+				<p>
+					0915 094 7588 <br/> 
+					trumpeta.waynetacan@gmail.com
+				</p>
+				<p>
+					Rizal Technological University,<br/> 
+					Pasig City
+				</p>
+			</div>
+			<div class="links">
+				<a class="lnk" href=https://www.facebook.com/profile.php?id=100087170606698&mibextid=ZbWKwL" target="_blank" > Come and Visit Our Page</a> <br />
+			</div>
+		</section>
+    </body>
+</html>

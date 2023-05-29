@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="stylesheet" type="text/css" href="Resources\External.css" />
+		
+    </head>
+    <body>
+		<header id="header">
+			<div class="container">
+				<div class="head">
+					<table>
+						<tr>
+							<th style="text-align:left"><img src="Resources/img/logo.jpg" alt="Logo" class="img"></th>
+							<th style="text-align:right">
+								<ul>
+									  <li><a class="active" href="index.html">Home</a></li>
+									  <li><a href="Menu.html">Menu</a></li>
+									  <li><a href="AboutUs.html">About DubuBap</a></li>
+									  <li><a href="OrderForm.html">Order Now</a></li>
+                                </ul>
+							</th>
+						</tr>
+					</table>
+				</div>
+            </div>
+		</header>
+		<section>
+			<div class="about">
+				<h2>Order DubuBap Now </h2>
+				<p id= "changing"></p>
+					<script>
+						  var textOptions = 
+						  [
+							"Try Our New Sisig Flavor!",
+							"More Flavors and Twist yet To Come!",
+							"Your Cravings Will Be Satisfied!",
+						  ];
+						  var changingTextElement = document.getElementById("changing");
+						  var currentIndex = 0;
+						  function updateText() 
+						  {
+							changingTextElement.textContent = textOptions[currentIndex];
+							currentIndex = (currentIndex + 1) % textOptions.length;
+						  }
+						  updateText();
+						  setInterval(updateText, 4000);
+					</script>
+			</div>	
+		</section>
+        <section class="form">
+			****************** This Page Is Under Maintenance *****************************************
+			<div class="product">
+				  <h3>SISIG </h3>
+				  <p>A sisig flavored kimbop </p>
+				  <button onclick="addToCart('Product 1')">Add to Cart</button>
+			</div>
+			<div class="product">
+				<h3>ADOBO</h3>
+				<p>An Adobo flavored kimbop </p>
+				 <button onclick="addToCart('Product 2')">Add to Cart</button>
+			</div>
+			<div class="product">
+				<h3>BICOL EXPRESS</h3>
+				<p>A Bicol Express flavored kimbop </p>
+				 <button onclick="addToCart('Product 3')">Add to Cart</button>
+			</div>
+
+				<button onclick="openCartPopup()">View Cart</button>
+
+				<div id="cartPopup" class="popup">
+				  <div class="popup-content">
+					<span class="close" onclick="closeCartPopup()">&times;</span>
+					<h3>Cart</h3>
+					<ul id="cartItems"></ul>
+					<form id="buyerForm">
+					  <h3>Buyer Details</h3>
+					  <input type="text" name="name" placeholder="Name" required>
+					  <input type="email" name="email" placeholder="Email" required>
+					  <input type="submit" value="Proceed to Checkout">
+					</form>
+				  </div>
+				</div>
+			<script>
+				var cart = [];
+
+function addToCart(product) {
+  var quantity = parseInt(prompt("Enter the quantity for " + product + ":"));
+  if (isNaN(quantity) || quantity <= 0) {
+    alert("Please enter a valid quantity.");
+    return;
+  }
+
+  var item = {
+    product: product,
+    quantity: quantity
+  };
+  cart.push(item);
+  displayCart();
+}
+
+function displayCart() {
+  var cartItemsElement = document.getElementById("cartItems");
+  cartItemsElement.innerHTML = "";
+
+  for (var i = 0; i < cart.length; i++) {
+    var item = cart[i];
+    var listItem = document.createElement("li");
+    listItem.textContent = item.product + " - Quantity: " + item.quantity;
+    cartItemsElement.appendChild(listItem);
+  }
+}
+
+function openCartPopup() {
+  var popup = document.getElementById("cartPopup");
+  popup.style.display = "block";
+}
+
+function closeCartPopup() {
+  var popup = document.getElementById("cartPopup");
+  popup.style.display = "none";
+}
+
+document.getElementById("buyerForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  // Perform further processing or submit the form to the server
+});
+			</script>
+		</section>
+		<section class="reach">
+			<div class="letter">
+				<form id="myForm" action="" method="post">
+					<h2>Newsletter</h2>
+					<p>Stay up to date with all the latest from the DubuBap</p>
+					<table style="text-align:center">
+							<tr>
+								<th>Email</th>
+							</tr>
+							<tr>
+								<th><input type="text" name= "email" placeholder="Enter Email"></th>
+								<th><input type="submit" name= "submit" value="Join"></th>
+							</tr>
+					</table>
+				</form>
+			</div>
+			<div class="contact">
+				<h2>Talk to Us</h2>
+				<p>
+					0915 094 7588 <br/> 
+					trumpeta.waynetacan@gmail.com
+				</p>
+				<p>
+					Rizal Technological University,<br/> 
+					Pasig City
+				</p>
+			</div>
+			<div class="links">
+				<a class="lnk" href=https://www.facebook.com/profile.php?id=100087170606698&mibextid=ZbWKwL" target="_blank" > Come and Visit Our Page</a> <br />
+			</div>
+		</section>
+    </body>
+</html>
