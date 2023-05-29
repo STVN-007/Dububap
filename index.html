@@ -3,6 +3,7 @@
     <head>
         <title>Menu</title>
         <link rel="stylesheet" type="text/css" href="Resources\External.css" />
+		
     </head>
     <body>
 		<header id="header">
@@ -35,13 +36,29 @@
 		</section>
 		<footer>
 			<div class="foot">
-				<p>Order Now !! Cash On Delivery !!</p>
-				<p>Free Delivery Around Nearby Areas</p>
+				<p id= "changing"></p>
+					<script>
+						  var textOptions = 
+						  [
+							"Order Now !! Cash On Delivery !!",
+							"Free Delivery Around Nearby Areas",
+							"Enjoy A Korean Goodness With A Twist",
+						  ];
+						  var changingTextElement = document.getElementById("changing");
+						  var currentIndex = 0;
+						  function updateText() 
+						  {
+							changingTextElement.textContent = textOptions[currentIndex];
+							currentIndex = (currentIndex + 1) % textOptions.length;
+						  }
+						  updateText();
+						  setInterval(updateText, 2000);
+					</script>
 			</div>
 		</footer>
 		<section class="reach">
 			<div class="letter">
-				<form>
+				<form id="myForm" action="" method="post">
 					<h2>Newsletter</h2>
 					<p>Stay up to date with all the latest from the DubuBap</p>
 					<table style="text-align:center">
@@ -58,18 +75,16 @@
 			<div class="contact">
 				<h2>Talk to Us</h2>
 				<p>
-					123-456-7890 <br/> 
-					x3mjsjaime@gmail.com
+					0915 094 7588 <br/> 
+					trumpeta.waynetacan@gmail.com
 				</p>
 				<p>
-					RTU,<br/> 
+					Rizal Technological University,<br/> 
 					Pasig City
 				</p>
 			</div>
 			<div class="links">
-				<a class="lnk" href="https://www.w3schools.com">Facebook</a> <br />
-				<a class="lnk" href="https://www.w3schools.com">Instagram</a>  <br />
-				<a class="lnk" href="https://www.w3schools.com">Twitter</a> <br />
+				<a class="lnk" href=https://www.facebook.com/profile.php?id=100087170606698&mibextid=ZbWKwL" target="_blank" > Come and Visit Our Page</a> <br />
 			</div>
 		</section>
     </body>
